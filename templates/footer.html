@@ -1,0 +1,330 @@
+
+<!-- ================================================
+     NAKL - Footer
+     templates/footer.html
+================================================ -->
+
+<style>
+    .nakl-footer {
+        background: #082c48;
+        color: #d8e7f1;
+        position: relative;
+        overflow: hidden;
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .nakl-footer * {
+        box-sizing: border-box;
+    }
+
+    .nakl-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            to left,
+            #38bdf8 0%,
+            #38bdf8 33%,
+            #579b75 33%,
+            #579b75 66%,
+            #0b75aa 66%,
+            #0b75aa 100%
+        );
+    }
+
+    .nakl-footer-container {
+        max-width: 1240px;
+        margin: auto;
+        padding: 75px 24px 40px;
+    }
+
+    .nakl-footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
+        gap: 46px;
+    }
+
+    .nakl-footer-brand {
+        max-width: 330px;
+    }
+
+    .nakl-footer-logo {
+        color: #fff;
+        font-size: 38px;
+        font-weight: 900;
+        letter-spacing: -2px;
+        margin-bottom: 15px;
+    }
+
+    .nakl-footer-logo span {
+        color: #38bdf8;
+    }
+
+    .nakl-footer-brand p {
+        font-size: 14px;
+        line-height: 2.1;
+        color: #b5cad9;
+        margin-bottom: 25px;
+    }
+
+    .nakl-footer h4 {
+        font-size: 16px;
+        font-weight: 800;
+        margin: 4px 0 25px;
+        color: white;
+    }
+
+    .nakl-footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .nakl-footer-links a {
+        color: #b5cad9;
+        text-decoration: none;
+        font-size: 13px;
+        transition: color .2s, transform .2s;
+    }
+
+    .nakl-footer-links a:hover {
+        color: #7dd3fc;
+        transform: translateX(-3px);
+    }
+
+    .nakl-footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        font-size: 13px;
+        color: #b5cad9;
+    }
+
+    .nakl-footer-contact div {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        line-height: 1.7;
+    }
+
+    .nakl-footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .nakl-footer-social a {
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        color: white;
+        border: 1px solid rgba(255,255,255,.15);
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 800;
+        transition: .2s;
+    }
+
+    .nakl-footer-social a:hover {
+        background: #176a94;
+        border-color: #176a94;
+    }
+
+    .nakl-footer-bottom {
+        margin-top: 55px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 12px;
+        color: #98b3c5;
+    }
+
+    .nakl-footer-bottom-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nakl-footer-bottom a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .nakl-footer-bottom a:hover {
+        color: white;
+    }
+
+    .nakl-footer-modes {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .nakl-footer-mode {
+        padding: 7px 11px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 8px;
+        font-size: 11px;
+    }
+
+    @media (max-width: 950px) {
+        .nakl-footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 38px;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .nakl-footer-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .nakl-footer-container {
+            padding: 55px 20px 25px;
+        }
+
+        .nakl-footer-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.8;
+        }
+    }
+</style>
+
+
+<footer class="nakl-footer">
+
+    <div class="nakl-footer-container">
+
+        <div class="nakl-footer-grid">
+
+            <!-- Brand -->
+            <div class="nakl-footer-brand">
+
+                <div class="nakl-footer-logo">
+                    نقل<span>.</span>
+                </div>
+
+                <p>
+                    منصة سعودية تجمع العملاء بمكاتب التخليص
+                    الجمركي، وتسهّل الحصول على عروض أسعار
+                    تنافسية ومتابعة طلبات التخليص للشحنات
+                    البحرية والجوية والبرية في مكان واحد.
+                </p>
+
+                <div class="nakl-footer-modes">
+                    <span class="nakl-footer-mode">✈ النقل الجوي</span>
+                    <span class="nakl-footer-mode">🚚 النقل البري</span>
+                    <span class="nakl-footer-mode">⚓ النقل البحري</span>
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div>
+
+                <h4>روابط سريعة</h4>
+
+                <nav class="nakl-footer-links" aria-label="روابط سريعة">
+                    <a href="/">الرئيسية</a>
+                    <a href="#services">خدمات التخليص</a>
+                    <a href="#how-it-works">كيف تعمل المنصة؟</a>
+                    <a href="#advantages">مميزات المنصة</a>
+                    <a href="#faq">الأسئلة الشائعة</a>
+                </nav>
+
+            </div>
+
+
+            <!-- Services -->
+            <div>
+
+                <h4>خدماتنا</h4>
+
+                <nav class="nakl-footer-links" aria-label="الخدمات">
+                    <a href="#sea-service">التخليص البحري</a>
+                    <a href="#air-service">التخليص الجوي</a>
+                    <a href="#land-service">التخليص البري</a>
+                    <a href="#request-quote">طلب عرض سعر</a>
+                    <a href="#brokers">التسجيل كمكتب تخليص</a>
+                </nav>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div>
+
+                <h4>تواصل معنا</h4>
+
+                <div class="nakl-footer-contact">
+
+                    <div>
+                        <span>📍</span>
+                        المملكة العربية السعودية
+                    </div>
+
+                    <div>
+                        <span>✉</span>
+                        <span>بيانات التواصل ستتاح عند الإطلاق</span>
+                    </div>
+
+                    <div>
+                        <span>🕘</span>
+                        تقديم الطلبات إلكترونيًا وفق توفر الخدمة
+                    </div>
+
+                </div>
+
+                <div class="nakl-footer-social">
+                    <!-- Add actual social URLs when available -->
+                    <a href="#brokers" aria-label="المكاتب">م</a>
+                    <a href="#services" aria-label="الخدمات">خ</a>
+                    <a href="#faq" aria-label="المساعدة">؟</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom -->
+        <div class="nakl-footer-bottom">
+
+            <span>
+                © <span id="naklFooterYear">2026</span>
+                منصة نقل NAKL. جميع الحقوق محفوظة.
+            </span>
+
+            <div class="nakl-footer-bottom-links">
+                <a href="#faq">الشروط والأحكام</a>
+                <a href="#faq">سياسة الخصوصية</a>
+                <a href="#faq">سياسة الاستخدام</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+(function () {
+    const year = document.getElementById('naklFooterYear');
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+})();
+</script>

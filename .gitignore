@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local databases, uploads, and generated files
+*.sqlite3
+*.sqlite3-journal
+media/
+staticfiles/
+.vscode/

@@ -1,0 +1,345 @@
+
+<!-- ================================================
+     NAKL - Header
+     templates/header.html
+================================================ -->
+
+<style>
+    .nakl-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.97);
+        border-bottom: 1px solid #e6edf2;
+        backdrop-filter: blur(18px);
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .nakl-header * {
+        box-sizing: border-box;
+    }
+
+    .nakl-topbar {
+        background: #092e4d;
+        color: #dcecf6;
+        font-size: 12px;
+    }
+
+    .nakl-topbar-inner {
+        max-width: 1240px;
+        margin: auto;
+        padding: 9px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .nakl-topbar strong {
+        color: #7dd3fc;
+    }
+
+    .nakl-topbar-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nakl-topbar a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .nakl-navbar {
+        max-width: 1240px;
+        margin: auto;
+        padding: 15px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .nakl-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        text-decoration: none;
+        color: #0a3556;
+        flex-shrink: 0;
+    }
+
+    .nakl-logo-icon {
+        height: 46px;
+        width: 46px;
+        display: grid;
+        place-items: center;
+        border-radius: 15px;
+        background: linear-gradient(
+            145deg,
+            #37b8ed,
+            #0b578d 65%,
+            #135c51
+        );
+        color: white;
+        font-size: 26px;
+        box-shadow: 0 7px 18px rgba(11, 84, 137, .16);
+    }
+
+    .nakl-logo-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nakl-logo-text strong {
+        font-size: 27px;
+        line-height: 1;
+        letter-spacing: -1px;
+        font-weight: 900;
+    }
+
+    .nakl-logo-text small {
+        font-size: 10px;
+        color: #718596;
+        margin-top: 5px;
+        font-weight: 600;
+    }
+
+    .nakl-navigation {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+    }
+
+    .nakl-navigation a {
+        text-decoration: none;
+        color: #42586a;
+        font-size: 14px;
+        font-weight: 700;
+        transition: color .2s;
+    }
+
+    .nakl-navigation a:hover,
+    .nakl-navigation a.active {
+        color: #078cc4;
+    }
+
+    .nakl-header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nakl-login {
+        padding: 11px 14px;
+        color: #0b5489;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .nakl-header-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        background: #0b5489;
+        color: white;
+        padding: 13px 18px;
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 13px;
+        text-decoration: none;
+        transition: .2s;
+    }
+
+    .nakl-header-btn:hover {
+        background: #087cb1;
+        transform: translateY(-2px);
+    }
+
+    .nakl-menu-toggle {
+        display: none;
+        background: #edf7fb;
+        color: #0b5489;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1024px) {
+        .nakl-navigation {
+            gap: 15px;
+        }
+
+        .nakl-navigation a {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .nakl-topbar-links {
+            display: none;
+        }
+
+        .nakl-menu-toggle {
+            display: block;
+        }
+
+        .nakl-navigation {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            padding: 20px 24px;
+            background: white;
+            box-shadow: 0 18px 30px rgba(0, 0, 0, .08);
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .nakl-navigation.is-open {
+            display: flex;
+        }
+
+        .nakl-navigation a {
+            padding: 14px 10px;
+            border-bottom: 1px solid #edf1f4;
+            font-size: 15px;
+        }
+
+        .nakl-login,
+        .nakl-header-btn {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nakl-topbar-inner,
+        .nakl-navbar {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .nakl-logo-text strong {
+            font-size: 23px;
+        }
+    }
+</style>
+
+
+<header class="nakl-header" id="siteHeader">
+
+    <!-- Top Information Bar -->
+    <div class="nakl-topbar">
+        <div class="nakl-topbar-inner">
+
+            <span>
+                🇸🇦 منصة سعودية لخدمات التخليص الجمركي
+                <strong>بكل سهولة وثقة</strong>
+            </span>
+
+            <div class="nakl-topbar-links">
+                <a href="#how-it-works">كيف تعمل المنصة؟</a>
+                <a href="#faq">الأسئلة الشائعة</a>
+                <span>العربية | SAR</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Main Navigation -->
+    <div class="nakl-navbar">
+
+        <!-- Logo -->
+        <a href="/" class="nakl-logo" aria-label="نقل - الرئيسية">
+
+            <div class="nakl-logo-icon">↗</div>
+
+            <div class="nakl-logo-text">
+                <strong>نقل<span style="color:#20a8da">.</span></strong>
+                <small>NAKL | CUSTOMS MARKETPLACE</small>
+            </div>
+
+        </a>
+
+
+        <!-- Navigation -->
+        <nav
+            class="nakl-navigation"
+            id="naklNavigation"
+            aria-label="القائمة الرئيسية"
+        >
+            <a href="/" class="active">الرئيسية</a>
+            <a href="#services">خدمات التخليص</a>
+            <a href="#how-it-works">كيف تعمل المنصة</a>
+            <a href="#advantages">لماذا نقل؟</a>
+            <a href="#brokers">مكاتب التخليص</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+        </nav>
+
+
+        <!-- Header Buttons -->
+        <div class="nakl-header-actions">
+
+            <a href="#brokers" class="nakl-login">
+                انضم كمكتب
+            </a>
+
+            <a href="#request-quote" class="nakl-header-btn">
+                اطلب عرض سعر
+                <span aria-hidden="true">←</span>
+            </a>
+
+            <button
+                type="button"
+                class="nakl-menu-toggle"
+                id="naklMenuToggle"
+                aria-label="فتح قائمة التنقل"
+                aria-controls="naklNavigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<script>
+(function () {
+    const toggle = document.getElementById('naklMenuToggle');
+    const menu = document.getElementById('naklNavigation');
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function () {
+        const isOpen = menu.classList.toggle('is-open');
+
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute(
+            'aria-label',
+            isOpen ? 'إغلاق القائمة' : 'فتح قائمة التنقل'
+        );
+        toggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'فتح قائمة التنقل');
+            toggle.textContent = '☰';
+        });
+    });
+})();
+</script>

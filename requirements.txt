@@ -1,0 +1,5 @@
+Django==6.1.2
+pillow==12.3.0
+cloudinary==1.46.3
+django-cloudinary-storage==0.3.0
+python-dotenv==1.2.4
